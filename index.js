@@ -59,6 +59,11 @@ async function getIngredientsName(barcode) {
         barCodePromise = await fetch(bardCodeURL);
         ingredientData = await barCodePromise.json();
 
+
+        if (!ingredientData.product.compared_to_category){
+            throw new Error("Retreived Product has incomplete information");
+        }
+
         ingredientName = ingredientData.product.compared_to_category.toLowerCase().replaceAll("en:", "").replaceAll("-", " ");
 
         addIngredients(ingredientName);
