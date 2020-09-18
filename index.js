@@ -37,12 +37,9 @@ function deleteElement(element) {
 const searchCodeBar = (e) => {
     let barCode = e.target.value;
     if (!Number.isNaN(barCode)) {
-
         getIngredientsName(barCode);
         console.log(e.target.value);
-
-    } 
-
+    } else showError("Please insert a valid bar code!");
 }
 
 function clearSearchCodeBar(e) {
@@ -72,8 +69,7 @@ async function getIngredientsName(barcode) {
         if (error.name = "TypeError") {
 
             showError("Please insert a valid bar code!");
-        }
-        else showError(error);
+        } else showError(error);
     }
 }
 
