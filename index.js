@@ -67,8 +67,7 @@ async function getIngredientsName(barcode) {
 
     } catch (error) {
         if (error.name = "TypeError") {
-
-            showError("Retreived Product may have incomplete information or the Bar Code inserted is not valid!");
+            showError("Retreived Product may have incomplete information!");
         } else showError(error);
     }
 }
