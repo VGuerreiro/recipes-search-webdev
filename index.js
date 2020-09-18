@@ -36,9 +36,10 @@ function deleteElement(element) {
 
 const searchCodeBar = (e) => {
     let barCode = e.target.value;
-    if (!Number.isNaN(barCode)) {
+    if (!isNaN(barCode)) {
         getIngredientsName(barCode);
         console.log(e.target.value);
+        console.log(!isNaN(barCode));
     } else showError("Bar Code inserted is not valid!");
 }
 
