@@ -41,7 +41,7 @@ const searchCodeBar = (e) => {
         getIngredientsName(barCode);
         console.log(e.target.value);
 
-    } 
+    } else showError("Please insert a valid bar code!");
 
 }
 
@@ -72,6 +72,7 @@ async function getIngredientsName(barcode) {
         if (error.name = "TypeError") {
 
             showError("Please insert a valid bar code!");
+            console.log(error);
         }
         else showError(error);
     }
