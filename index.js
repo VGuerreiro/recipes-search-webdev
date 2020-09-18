@@ -61,10 +61,6 @@ async function getIngredientsName(barcode) {
 
         ingredientName = ingredientData.product.compared_to_category.toLowerCase().replaceAll("en:", "").replaceAll("-", " ");
 
-        console.log("barcode: " + barcode);
-        console.log(ingredientData);
-        console.log("ingredientName:" + ingredientName);
-
         addIngredients(ingredientName);
         return ingredientName;
 
@@ -73,6 +69,10 @@ async function getIngredientsName(barcode) {
 
             showError("Please insert a valid bar code!");
             console.log(error);
+
+            console.log(ingredientData);
+            console.log("barcode: " + barcode);
+            console.log("ingredientName:" + ingredientName);
         }
         else showError(error);
     }
@@ -137,6 +137,7 @@ async function getRecipes() {
 
     } catch (error) {
         showError(error);
+        console.log(error);
     }
 
     console.log(recipesData);
