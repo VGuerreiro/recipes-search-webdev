@@ -41,7 +41,7 @@ const searchCodeBar = (e) => {
         getIngredientsName(barCode);
         console.log(e.target.value);
 
-    } else showError("Please insert a valid bar code!");
+    } 
 
 }
 
