@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge & Go</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-700 font-body">
+
+    <header class="bg-white flex justify-center border-b-4 shadow ">
+        <a href="">
+            <h1
+                class="text-red-500 hover:text-red-600 uiAnim text-5xl sm:text-6xl text-center font-bold font-title mx-12">
+                Fridge &
+                Go</h1>
+        </a>
+    </header>
+
+    <main class="mx-12 bg-yellow-300 rounded-lg shadow flex flex-col justify-center items-center">
+
+        <section class="searchBar md:text-lg flex flex-wrap justify-center items-center w-full">
+            <label for="search" class="font-bold">Search:</label>
+            <input type="search" pattern="[0-9]+" name="search"
+                class="searchInput hover:text-red-700 hover:bg-gray-100 uiAnim" id="searchBar"
+                placeholder="insert code-bar here...">
+            <p class="text-xs text-gray-500 mt-2 w-full">(Insert Numeric Values Only)</p>
+        </section>
+
+        <section class="m-5 p-5 bg-yellow-200 rounded-lg shadow w-full">
+            <ul id="selectIngredients" class="m-5 p-3 md:flex md:justify-evenly items-baseline uiAnim min-w-full"></ul>
+            <button id="searchBTN" class="btn uiAnim">Search</button>
+        </section>
+
+        <section id="searchResult" class="p-8 rounded-b-lg bg-gray-200 shadow grid lg:grid-cols-3 gap-10 w-full">
+        </section>
+
+        <aside id="modalPopUp"
+            class="text-gray-600 hidden flex-wrap justify-center items-center bg-black bg-opacity-25 z-50 w-screen h-screen absolute">
+            <div class="w-1/2 h-1/2 absolute bg-gray-300 border-b-2 border-red-600 shadow-xl">
+                <section id="modalHeader" class="text-center flex justify-center col-span-2 p-5 w-full">
+                    <h2 class="text-lg font-bold">Something went wrong</h2>
+                    <!-- <span id="modealClose" class="text-lg font-bold cursor-pointer">X</span> -->
+                </section>
+                <section class="bg-gray-200 w-full text-center py-3">
+                    <p id="modalText" class="font-semibold"></p>
+                    <button id="errorBTN" class="btn w-32 mt-3">OK</button>
+                </section>
+
+            </div>
+        </aside>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
