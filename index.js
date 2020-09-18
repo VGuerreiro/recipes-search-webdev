@@ -59,11 +59,6 @@ async function getIngredientsName(barcode) {
         barCodePromise = await fetch(bardCodeURL);
         ingredientData = await barCodePromise.json();
 
-
-        if (!ingredientData.product.compared_to_category){
-            throw new Error("Retreived Product has incomplete information");
-        }
-
         ingredientName = ingredientData.product.compared_to_category.toLowerCase().replaceAll("en:", "").replaceAll("-", " ");
 
         addIngredients(ingredientName);
@@ -72,6 +67,9 @@ async function getIngredientsName(barcode) {
     } catch (error) {
         if (error.name = "TypeError") {
 
+            if (!ingredientData.product.compared_to_category) {
+                throw new Error("Retreived Product has incomplete information");
+            }
             showError("Please insert a valid bar code!");
             console.log(error);
 
