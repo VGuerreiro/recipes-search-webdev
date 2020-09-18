@@ -68,10 +68,8 @@ async function getIngredientsName(barcode) {
         if (error.name = "TypeError") {
 
             if (!ingredientData.product.compared_to_category) {
-                throw new Error("Retreived Product has incomplete information");
-            }
-
-            else showError("Please insert a valid bar code!");
+                showError("Retreived Product has incomplete information");
+            } else showError("Please insert a valid bar code!");
             console.log(error);
             console.log(ingredientData);
             console.log("barcode: " + barcode);
