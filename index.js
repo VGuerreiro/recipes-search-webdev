@@ -39,7 +39,7 @@ const searchCodeBar = (e) => {
     if (!Number.isNaN(barCode)) {
         getIngredientsName(barCode);
         console.log(e.target.value);
-    } else showError("Retreived Product may have incomplete information or the Bar Code inserted is not valid!");
+    } else showError("Bar Code inserted is not valid!");
 }
 
 function clearSearchCodeBar(e) {
