@@ -37,12 +37,9 @@ function deleteElement(element) {
 const searchCodeBar = (e) => {
     let barCode = e.target.value;
     if (!Number.isNaN(barCode)) {
-
         getIngredientsName(barCode);
         console.log(e.target.value);
-
-    } else showError("Please insert a valid bar code!");
-
+    } else showError("Retreived Product may have incomplete information or the Bar Code inserted is not valid!");
 }
 
 function clearSearchCodeBar(e) {
@@ -61,21 +58,18 @@ async function getIngredientsName(barcode) {
 
         ingredientName = ingredientData.product.compared_to_category.toLowerCase().replaceAll("en:", "").replaceAll("-", " ");
 
+        console.log("barcode: " + barcode);
+        console.log(ingredientData);
+        console.log("ingredientName:" + ingredientName);
+
         addIngredients(ingredientName);
         return ingredientName;
 
     } catch (error) {
         if (error.name = "TypeError") {
 
-            if (!ingredientData.product.compared_to_category) {
-                showError("Retreived Product has incomplete information");
-            } else showError("Please insert a valid bar code!");
-            console.log(error);
-            console.log(ingredientData);
-            console.log("barcode: " + barcode);
-            console.log("ingredientName:" + ingredientName);
-        }
-        else showError(error);
+            showError("Retreived Product may have incomplete information or the Bar Code inserted is not valid!");
+        } else showError(error);
     }
 }
 
@@ -138,7 +132,6 @@ async function getRecipes() {
 
     } catch (error) {
         showError(error);
-        console.log(error);
     }
 
     console.log(recipesData);
