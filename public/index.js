@@ -140,10 +140,6 @@ async function getRecipes() {
 
     console.log(recipesData);
     showRecipes(recipesData);
-
-    // const RecipeByIngredientURL = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredientsString}&addRecipeInformation=true&instructionsRequired=true&sort=popularity&limitLicense=false&number=${numRecipeResults}&apiKey=0642a228dec44d00a6dc51e1470af6d4`;
-
-    // https://api.spoonacular.com/recipes/324694/analyzedInstructions
 }
 
 function showRecipes(recipesData) {
